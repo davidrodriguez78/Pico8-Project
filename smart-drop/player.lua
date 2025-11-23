@@ -71,6 +71,7 @@ function u_plr()
 		end
 	end
 	plr.y-=jforce
+
 	--gas--
 	if plr.state=="gas" then
 		gravity=0
@@ -86,6 +87,7 @@ function u_plr()
 		gravity=2
 		--plr.y-=(plr.y+8)%8
 	end
+
 	--anim--
 	if is_moving and onground() and plr.state=="drop" then
 		p_anim()
@@ -122,9 +124,6 @@ function u_plr()
 	trigger()
 	--add time--
 	add_sec()
-
-	--loss--
-	
 end
 
 
@@ -139,13 +138,14 @@ function trigger()
 	if mget(px1,py)==12 and plr.state=="ice" then
 		mset(1,3,13)
 		mset(14,12,24)
+		sfx(4)
 	end
 	--win--
 	if mget(px1,py)==9 and plr.state=="drop" then
 		plr.sp=10
 		sfx(2)
 		game_state="finish"
-		i_part(63,63)
+		i_part(plr.x,plr.y)
 	end
 end
 function p_anim()

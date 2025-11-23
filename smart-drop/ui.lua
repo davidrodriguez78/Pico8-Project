@@ -1,7 +1,7 @@
 function i_ui()
     clock={
         x=8*8,
-        y=2*7,
+        y=2*8,
         t=20
     }
 end
@@ -13,6 +13,9 @@ function u_ui()
     if clock.t<=0 then
         clock.t=0
         game_state="loss"
+        music(-1)
+        sfx(3)
+
     end
 end
 

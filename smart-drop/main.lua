@@ -1,7 +1,7 @@
 function _init()
 	i_plr()
 	i_ui()
-	--i_part()
+	
 
 	--main menu init--
 	game_state="menu"
@@ -37,7 +37,6 @@ function _update()
 		end
 	end
 	if game_state=="finish" then
-		--u_part()
 		music(-1)
 
 		--part efx--
@@ -66,21 +65,20 @@ function _draw()
 		--make by--
 		print("by oldpixelpr",70,120,10)
 		clip(0,40,clip_w,10)
-		print("press 🅾️ to start",32,40,8)
+		print("press 🅾️/z to start",32,40,8)
 		clip()
 	end
 	
 	if game_state=="loss" then
 		print("time out",56,63,8)
 		clip(0,40,clip_w,10)
-		print("press 🅾️ to start",32,40,8)
+		print("press 🅾️/z to start",32,40,8)
 		clip()
+		
 	elseif game_state=="finish" then
-		--d_part()--
 		print("you win!!",56,63,9)
 		clip(0,40,clip_w,10)
-		print("press 🅾️ to start",32,40,9)
+		print("press 🅾️/z to start",32,40,9)
 		clip()
 	end
-	
 end
