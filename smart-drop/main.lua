@@ -35,7 +35,6 @@ function _update()
 	end
 end
 
-
 function _draw()
 	cls()
 	map()
@@ -73,4 +72,3 @@ function _draw()
 	end
 	
 end
-
