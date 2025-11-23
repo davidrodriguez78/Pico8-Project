@@ -145,6 +145,7 @@ function trigger()
 		plr.sp=10
 		sfx(2)
 		game_state="finish"
+		i_part(63,63)
 	end
 end
 function p_anim()

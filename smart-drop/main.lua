@@ -8,8 +8,10 @@ function _init()
 	clip_w=32
 
 	--music--
-	-- bebop(2)
 	music(0)
+
+	--particle--
+	part={}
 end
 
 
@@ -37,6 +39,9 @@ function _update()
 	if game_state=="finish" then
 		--u_part()
 		music(-1)
+
+		--part efx--
+		u_part()
 	end
 end
 
@@ -44,7 +49,9 @@ function _draw()
 	cls()
 	map()
 	d_ui()
+	d_part()
 	d_plr()
+
 	--main menu--
 	if game_state=="menu" then
 		rectfill(0,0,128,128,12)

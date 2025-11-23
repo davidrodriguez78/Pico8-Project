@@ -1,41 +1,35 @@
-function i_part()
-    exps={}
-    clrs={12,5,9,10,7}
+function i_part(x,y)
+    for i=1,20 do
+        local angle=rnd(1)*1*3.1415
+        local speed=1+rnd(1.5)
+
+        add(part,{
+            x=x,
+            y=y,
+            dx=cos(angle)*speed,
+            dy=sin(angle)*speed,
+            l=30+flr(rnd(20)),
+            col=8+flr(rnd(7))
+        })
+    end
 end
 
 function u_part()
-    for p in all(exps) do
-        p.x+=p.spdx
-        p.y+=p.spdy
-        p.scale-=.1
-        p.l-=.1
-        p.c=flr(p.l)
+    for p in all(part) do
+        p.x+=p.dx
+        p.y+=p.dy
+
+        p.dy+=0.03 --gravity
+
+        p.l-=1
         if p.l<=0 then
-            del(exps,p)
+            del(part,p)
         end
-    end
-    if game_state=="finish" then
-        xp=rnd(128)
-        yp=rnd(128)
-        for i=0,10 do
-            add(exps,{
-                x=xp,
-                y=yp,
-                spdx=1-rnd(2),
-                spdy=1-rnd(2),
-                scale=2+rnd(5),
-                l=5
-            })
-            
-        end
-    end
-    for pr in all(exps) do
-        sfx(1)
     end
 end
 
 function d_part()
-    for p in all(exps) do
-        circfill(p.x,p.y,p.scale,clrs[p.c])
+    for p in all(part) do
+        pset(p.x,p.y,p.col)
     end
 end
