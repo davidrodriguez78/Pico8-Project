@@ -65,7 +65,7 @@ function _draw()
 		print("press 🅾️ to start",32,40,8)
 		clip()
 	elseif game_state=="finish" then
-		--d_part()
+		--d_part()--
 		print("you win!!",56,63,7)
 		clip(0,40,clip_w,10)
 		print("press 🅾️ to start",32,40,7)
@@ -73,3 +73,4 @@ function _draw()
 	end
 	
 end
+
