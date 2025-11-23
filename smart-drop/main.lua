@@ -6,6 +6,10 @@ function _init()
 	--main menu init--
 	game_state="menu"
 	clip_w=32
+
+	--music--
+	-- bebop(2)
+	music(0)
 end
 
 
@@ -32,6 +36,7 @@ function _update()
 	end
 	if game_state=="finish" then
 		--u_part()
+		music(-1)
 	end
 end
 
@@ -65,9 +70,9 @@ function _draw()
 		clip()
 	elseif game_state=="finish" then
 		--d_part()--
-		print("you win!!",56,63,7)
+		print("you win!!",56,63,9)
 		clip(0,40,clip_w,10)
-		print("press 🅾️ to start",32,40,7)
+		print("press 🅾️ to start",32,40,9)
 		clip()
 	end
 	

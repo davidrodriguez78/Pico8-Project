@@ -143,6 +143,7 @@ function trigger()
 	--win--
 	if mget(px1,py)==9 and plr.state=="drop" then
 		plr.sp=10
+		sfx(2)
 		game_state="finish"
 	end
 end
